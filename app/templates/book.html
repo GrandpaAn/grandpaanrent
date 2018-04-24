@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% from 'bootstrap/pagination.html' import render_pagination %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+	<div class="page-header">
+		<div class="container">
+			<h1>{{ self.title() }}</h1>
+		</div>	
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-3">
+				<div class="thumbnail">
+					<img src="http://semantic-ui-forest.com/static/kitchen-sink/images/wireframe/image.png" alt="...">
+					<div class="caption">
+						<h3>title</h3>
+						<p>描述</p>
+						<p>价格</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		{% if pagination %}
+			{{ render_pagination(pagination) }}
+		{% endif %}
+	</div>
+
+	<div class="container">
+		<nav>
+			<ul class="pagination">
+			<li class="disabled"><a href="#">«</a></li>
+			<li class="disabled"><a href="#">1</a></li>
+			<li class="disabled"><a href="#">2</a></li>
+			<li class="disabled"><a href="#">3</a></li>
+			<li class="disabled"><a href="#">4</a></li>
+			<li class="disabled"><a href="#">»</a></li></ul>
+		</nav>
+	</div>
+
+{% block footer %}
+	<hr>
+	{{ super() }}
+	<br/>
+{% endblock %}
+
+{% endblock content %}

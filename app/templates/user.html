@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="container"> 
+		<img src="{{ '{{ current_user.email }}' | gravatar }}" width="150" height="150" alt="test" class="img-circle"></br>
+		<h2><a href="#" class="active">{{ current_user.username }}</a></h2>
+
+		<hr>{{ current_user }}<hr>
+		{{ current_user.password }}
+		<div>租赁物品数:</div>
+		<div>评论数:</div>
+		<button type="button" class="btn btn-primary">租赁管理</button>
+		<button type="button" class="btn btn-primary">修改密码</button>
+		
+
+	</div>
+
+{% block footer %}
+	<hr>
+	{{ super() }}
+	<br/>
+{% endblock %}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block scripts %}
+	{{ super() }}
+	{# {{ pagedown.include_pagedown() }} #}
+{% endblock %}
+
+{% block content %}
+
+	<div class="page-header">
+		<div class="container">
+			<h1>我要出租</h1>
+		</div>	
+	</div>
+	<div class="container">
+		<a href="{{ url_for('main.houserent') }}" class="btn btn-default">出租房源</a>
+		<a href="{{ url_for('main.phonerent') }}" class="btn btn-default">出租手机</a>
+		<a href="{{ url_for('main.bookrent') }}" class="btn btn-default">出租书籍</a>
+	</div>
+		
+{% endblock %}
+
